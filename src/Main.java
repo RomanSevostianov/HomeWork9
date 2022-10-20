@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 
 public class Main {
 
@@ -32,10 +31,9 @@ public class Main {
 
         int p = 0; // счетчик дней
         int amount = 0; // сумма
-        int min = 0;
-        int max = 0;
+
         int[] array = new int[30];
-        int averageValue = 0;//среднее значение
+        int averageValue;//среднее значение
 
 
         for (int i = 0; i <= array.length - 1; i++) {
@@ -45,9 +43,6 @@ public class Main {
             p = p + 1;
             System.out.println("Запись в книге номер " + p + " = " + array[i] + " руб");
             amount = array[i] + amount;
-            min = Arrays.stream(array).min().getAsInt();
-            max = Arrays.stream(array).max().getAsInt();
-
 
         }
         averageValue = (amount / array.length - 1);
