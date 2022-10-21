@@ -1,5 +1,4 @@
 
-
 public class Main {
 
     public static int[] generateRandomArray() {
@@ -27,34 +26,27 @@ public class Main {
 
     }
 
-    public static void main(String[] args) {
 
-        int p = 0; // счетчик дней
-        int amount = 0; // сумма
-
-        int[] array = new int[30];
-        int averageValue;//среднее значение
-
-
-        for (int i = 0; i <= array.length - 1; i++) {
-            java.util.Random r = new java.util.Random();
-            int x = r.nextInt(100_000) + 100_000;
-            array[i] = x;
-            p = p + 1;
-            System.out.println("Запись в книге номер " + p + " = " + array[i] + " руб");
-            amount = array[i] + amount;
-
+    public static void amountAndAverage() { //сумма всех чисел
+        int[] arr = generateRandomArray();
+        int amount = 0;
+        int averageValue;
+        for (int element : arr) {
+            amount = element + amount;
         }
-        averageValue = (amount / array.length - 1);
-        System.out.println("\n" + "Сумма трат за месяц составила = " + amount + "  рублей");
-        findingMaxMin();
+        averageValue = (amount / generateRandomArray().length - 1);
+        System.out.println("Сумма всех чисел " + amount + " рублей");
         System.out.println("Средняя сумма трат за месяц составила " + averageValue + " рублей");
+
+    }
+
+    public static void main(String[] args) {
+        findingMaxMin();
+        amountAndAverage();
 
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
-
         }
-
     }
 }
